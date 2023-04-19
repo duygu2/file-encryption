@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    
+      <h1 id="des_baslik">Des Algoritması</h1>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+
+<div class="container">
+    <p>
+    DES (Data Encryption Standard) dünyada en çok kullanılan şifreleme algoritmasıdır.DES, ilk simetrik şifreleme algoritmasıdır.
+    DES’in, önceki substitution (yerine koyma) algoritmalarından en büyük farkı, işlemlerini bitler (0 ve 1) üzerinden yapıyor olmasıdır.
+    Veriyi bloklara ayırarak şifreleme yapar. Her blok 64 bitten oluşur. Ve 56 bitlik anahtar kullanır. Aynı anahtarla hem şifreleme hem de deşifreleme yapar.
+    Aslında, orjinal anahtar 64 bittir. Fakat parite kontrolu için 8 biti ayırır. Dolayısıyla kullandığı 56 bittir.
+    1997'de resmi bilgi şifreleme standardı olarak kabul edilirken, 2000'de yerini AES'e bırakmıştır.
+    DES, bağımlılık fazla olmasına rağmen, modern bilgisayarlara dayanamaz. Brute Force ataklarına karşı güvensizdir. 
+    Bu noktada DES’in güvenilirliğini artırmak için 3DES yöntemi geliştirilmiştir. Bu yöntemde, şifrelenen veri tekrar geri çözülür ve DES şifrelemesi 3 sefer art arda yapılır.
+    Şifreleme için kullanılan ve uzunluğu 24 byte olan anahtar, 3 bloğa ayrılır. İlk 8 byte ile şifreleme yapılır, buraya kadar olan kısım DES işlemidir. Daha sonra şifrelenen metin ortadaki 8 byte ile çözülür 
+    ve son 8 byte ile tekrar şifrelenerek 8 byte’lık blok elde edilir. DES’e göre güvenilirliği fazladır fakat hız 3 kat daha azalmıştır.
+    Her byte bir eşlik biti bulundurur. Dolayısı ile kullanılan anahtar 168 bittir. (24*7=168)
+    DES’i kırmak için yüksek maliyetle son teknoloji makineler geliştirilmiş olmasına rağmen 3DES,
+    bankalar ve devlet daireleri olmak üzere birçok ortamda kullanılmaya devam etmektedir.
+    </p>
+</div>
+</body>
+</html>
+

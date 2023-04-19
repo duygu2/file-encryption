@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  
+
+  {% if messages %}
+    <div class="alert alert-danger" role="alert">
+      {% for message in messages %}
+        {{ message }}<br>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="belge">Belge Seçin:</label>
+      <input type="file" class="form-control-file" id="belge" name="belge">
+    </div>
+    <div class="form-group">
+      <label for="anahtar_kelime">Anahtar Kelime:</label>
+      <input type="text" class="form-control" id="anahtar_kelime" name="anahtar_kelime">
+    </div>
+    <button type="submit" class="btn btn-primary">Yükle</button>
+  </form>
+{% endblock %}

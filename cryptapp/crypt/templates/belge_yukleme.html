@@ -1,0 +1,58 @@
+{% load static %}
+<head>
+  
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  </head>
+  <div><h3>(Word dosyası yükleyiniz)</h3></div>
+<div class="container">
+    <div class="left">
+    
+<form method="post" enctype="multipart/form-data" action="{% url  'belge_sifreleme' %}">
+    {% csrf_token %}
+    <div> <h1>Şifrelemek istediğiniz belgeyi seçin</h1></div>
+    <label for="belge" >Belge Seçin:</label>
+    <input type="file" name="belge" id="belge">
+    <br><br>
+    <label for="anahtar_kelime" >Anahtar kelime:</label>
+    <input type="text" name="anahtar_kelime" id="anahtar_kelime">
+    <br><br>
+    <input type="submit" id="button"  value="Şifrele">
+</form>
+    </div>
+    <div class="right">
+        {% block content %}
+  
+
+        {% if messages %}
+          <div class="alert alert-danger" role="alert">
+            {% for message in messages %}
+              {{ message }}<br>
+            {% endfor %}
+          </div>
+        {% endif %}
+      
+        <form method="POST" enctype="multipart/form-data" action="{% url  'belge_desifreleme' %}">
+          {% csrf_token %}
+          <div class="form-group">
+              <h1>Şifreli belgenizi yükleyin</h1>
+            <label for="belge">Belge Seçin:</label>
+            <input type="file" class="form-control-file" id="belge" name="belge">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="anahtar_kelime" >Anahtar Kelime:</label>
+            <input type="text" class="form-control" id="anahtar_kelime" name="anahtar_kelime">
+          </div>
+          <br>
+          <button type="submit" id="button" class="btn btn-primary">Deşifrele</button>
+        </form>
+      {% endblock %}
+      
+    </div>
+  </div>
+
+
+  <form method="get" action="{% url 'des_bilgilendirme' %}">
+    <button type="submit" class="des_info">DES Algoritması Hakkında</button>
+</form>

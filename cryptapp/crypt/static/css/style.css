@@ -1,0 +1,59 @@
+body {
+  background-color: red;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: 40px;
+  
+  }
+  
+  .left, .right {
+    flex-basis: 100%;
+  }
+#des_baslik
+  
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+#button{background-color: black; color: white;}
+input[type="file"]::-webkit-file-upload-button {
+  background-color: black;
+  color: white;
+  padding: 6px 10px;
+  border: 1px solid #6e3d3d;
+  border-radius: 3px;
+}
+
+#anahtar_kelime{
+  color: white;
+  background-color: black;
+}
+
+.des_info{
+  background-color: black;
+  color: white;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 32px;
+  text-align: center;
+  margin-left: 500px;
+  
+}
+
+p  {
+  color: black;
+  font-family: courier;
+  font-size: 160%;
+}
+
+h3{
+  text-align: center;
+  font-style: italic;
+}
